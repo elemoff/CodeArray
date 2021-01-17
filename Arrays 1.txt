@@ -1,0 +1,240 @@
+1.Besh ededden ibaret massiv daxil etmek ve sonra onu ters ardicilliqla cap etmek....
+int arr[5], size, elements;
+	cout << "Zehmet olmasa massivin olcusunu daxil edin: " << endl;
+
+	cin >> size;
+	cout << "Zehmet olmasa massivin elementlerini daxil edin: " << endl;
+	for (int  i = 0; i < 5; i++)
+	{
+		cin >> arr[i];
+	}
+	cout << "Daxil olunan massivin ters ardicilliqla oxunushu: " << endl;
+	for (int i = size-1; i >=0; i--)
+	{
+		cout << arr[i] << endl;
+	}
+
+
+2. 20 tesadufi (random) ededden ibaret massiv yaradin ve hemen massivde cut indeksde duran elementleri cap edin....
+
+srand(time(0));
+	int arr[20];
+	for (int i = 0; i < 20; i++)
+	{
+		if (i % 2 == 0 )
+		{
+			 arr[i]= (rand() % 20)+1;
+			 cout << arr[i] << endl;
+		}
+		
+	}
+3. -20 den 20 -e qeder diapazonda 10 random ededden ibaret massiv yaradin. Massivin musbet elementlerinin ededi ortasini tapin...
+
+
+srand(time(0));
+
+	int sum = 0;
+	int ededi_orta = 1;
+	int saygac = 0;
+	int arr[10] = {};
+	for (int  i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 41 - 20;
+		cout << arr[i] << ' ' ;
+	}
+	cout << endl;
+	for (int i = 0; i < 10; i++) {
+		if (arr[i] > 0)
+		{
+			sum += arr[i];
+			saygac++;
+			
+		}
+
+	}
+	cout <<"SUM: "<< sum<<endl;
+	ededi_orta = sum / saygac;
+	cout << "Musbet ededlerin ededi ortasi: " << ededi_orta << endl;
+
+----------------------------------------------------------------------------------------------------
+4. -5 den 5 e dek diapazonda 10 elementden ibaret random massiv yaradin. Massivin - + ve 0-a beraber olan elementlerinin sayi...
+
+
+srand(time(0));
+	int arr[10];
+	int musbet = 0, menfi = 0, sifir = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 11 - 5;
+		cout << arr[i] << ' ';
+	}
+	cout << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] >0 )
+		{
+			musbet++;
+		}
+		if (arr[i]<0)
+		{
+			menfi++;
+		}
+		if (arr[i]==0)
+		{
+			sifir++;
+		}
+	}
+	cout << "Musbet elementlerin sayi: " << musbet << endl;
+	cout << "Menfi elementlerin sayi: " << menfi << endl;
+	cout << "Sifira beraber olan elementlerin sayi: " << sifir << endl;
+
+---------------------------------------------
+5. 10 təsadüfi (random) tam ədəddən ibarət massiv yaradın.
+Massivin cüt elementlərinin toplamını və tək elementlərinin ədədi ortasını tapmaq.
+
+int arr[10];
+	int cut_sum = 0, tek_sum = 0, tek_ededi_orta;
+	int tek_syagac = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 11 ;
+		cout << arr[i] << ' ';
+	}
+
+	cout << endl;
+	for (int  i = 0; i < 10; i++)
+	{
+		if (arr[i] % 2 == 0)
+		{
+			cut_sum += arr[i];
+			
+		}
+		if (arr[i] % 2 ==1 )
+		{
+			tek_sum += arr[i];
+			tek_syagac++;
+		}
+	}
+		tek_ededi_orta = tek_sum / tek_syagac;
+	cout << "Cut ededlerin cemi: " << cut_sum << endl;
+	cout << "Tek ededlerin ededi ortasi: " << tek_ededi_orta << endl;
+----------------------------------------------------------------------------------------
+6.  10 təsadüfi (random) elementdən ibarət simvol massivi (char-massiv) yaradın. Neçə rəqəm, hərif və punktuasiya elementinin olmasını təyin etmək.
+-------------------------------------------------------------------------
+7.. 1-ci addım: İstifadəçi 2 rəqəmli ədəd daxil edir.
+2-ci addım: 0-100 diapazonunda 100 təsadüfi (random) tam ədəddən ibarət massiv yaradın. Daxil olunmuş ədədin massivdə sayını tapan proqram yazın........
+
+srand(time(0));
+	int num;
+	cout << "Zehmet olmasa ededi daxil edin: ";			 cin >> num;
+	int saygac = 0;
+	int arr[100] = {};
+	for (int i = 0; i < 100; i++)
+	{
+		arr[i] = rand() % 100;
+		cout << arr[i] <<' ';
+	}
+	cout << endl;
+		for (int i = 0; i < 100; i++)
+		{
+			
+			if (arr[i] == num)
+			{
+				
+				saygac++;
+			}
+		}
+		cout <<"Daxil olunan eddein massivde sayi: "<< saygac << endl;
+----------------------------------------------------------------------------------------------------------------------------
+8. 0-100 diapazonunda 10 təsadüfi (random) tam ədəddən ibarət massiv yaradın. Massivin 3, 5, 7 bölünən elementlərinin sayını təyin.
+
+srand(time(0));
+	int arr[10];
+	int saygac = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 100;
+		cout << arr[i] << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] % 3 == 0 || arr[i] % 5 == 0 || arr[i] %7 ==0)
+		{
+			saygac++;
+		}
+
+	}
+	cout << " 3-e , 5-e ve 7-e bolunen ededlerin sayi:  " << saygac << endl;
+
+------------------------------------------------------------------------------------------------
+
+9.  0-100 diapazonunda 10 təsadüfi (random) tam ədəddən ibarət massiv yaradın. Massivin 3-ə bölünüb 5-ə bölünməyən elementlərinin toplamını təyin etmək.
+
+srand(time(0));
+	int arr[10];
+	int saygac = 0;
+	int sum = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand() % 100;
+		cout << arr[i] << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] % 3 == 0 && arr[i] % 5 != 0 )
+		{
+			
+			cout << arr[i]<<' ';
+			saygac++;
+			sum += arr[i];
+			
+		}
+
+	}
+	cout << endl;
+	cout << " 3-e  bolunub 5-e bolunmeyenlerin sayi:  " << saygac << endl;
+	cout << "3-e bolunub ve 5-e bolunmeyenlerin cemi: " << sum << endl;
+-------------------------------------------------------------------------------------------------------------------
+10. -10 - 30 diapazonunda 20 təsadüfi (random) ədəddən ibarət massiv yaradın. Massivdə birinci mənfi elementdən sonra yerləşən elementlərin toplamını təyin etmək.
+srand(time(0));
+	int arr[20] = {};
+	int sum = 0;
+	int x = 0;
+	for (int i = 0; i < 20; i++)
+	{
+		arr[i] = rand() % 40 - 10;
+		cout << arr[i] << ' ';
+	}
+	cout << endl;
+	for (int i = 0; i < 20; i++)
+	{
+		if (arr[i]<0)
+		{
+			x = i;
+			break;
+		}
+	}
+	
+	for (int i = x; i < 20; i++)
+	{
+		sum += arr[i];
+	}
+	cout << sum << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
